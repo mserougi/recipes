@@ -61,6 +61,8 @@ class PuppyService: NSObject
         let pageLimit = 10
         var allRecipes = [Recipe]()
         
+        self.operationQueue.cancelAllOperations()
+        
         self.getPagedRecipes(query: query, page: 1, completion: { (recipes: [Recipe]) in
             allRecipes.append(contentsOf: recipes)
             
@@ -69,8 +71,6 @@ class PuppyService: NSObject
             if allRecipes.count == pageLimit {
                 
                 print ("Potential more than 10 - Operation queue will be used")
-                
-                self.operationQueue.cancelAllOperations()
                 
                 let completionOperation = BlockOperation {
                     completion(allRecipes)
