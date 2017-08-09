@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aoK-vb-EfK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="aob-Ls-tw1">
+            <objects>
+                <viewController id="aoK-vb-EfK" customClass="HomeViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZOV-l9-1lU"/>
+                        <viewControllerLayoutGuide type="bottom" id="r2d-va-VNg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oWP-0U-Lsh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="b4M-G9-ZkY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XWE-SR-U0l"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aoK-vb-EfK" id="GfJ-0Q-kYU"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x1q-J4-1TV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="pTQ-aJ-Ulw">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTQ-aJ-Ulw" id="dJd-E4-pom">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aoK-vb-EfK" id="eGp-DN-uKH"/>
+                                    <outlet property="delegate" destination="aoK-vb-EfK" id="T6V-ne-qlI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b4M-G9-ZkY" firstAttribute="top" secondItem="ZOV-l9-1lU" secondAttribute="bottom" id="3Bc-s7-EHO"/>
+                            <constraint firstItem="x1q-J4-1TV" firstAttribute="leading" secondItem="oWP-0U-Lsh" secondAttribute="leading" id="4lV-2l-LaU"/>
+                            <constraint firstItem="b4M-G9-ZkY" firstAttribute="leading" secondItem="oWP-0U-Lsh" secondAttribute="leading" id="7SN-Yg-UeW"/>
+                            <constraint firstAttribute="trailing" secondItem="x1q-J4-1TV" secondAttribute="trailing" id="NFm-VT-yrB"/>
+                            <constraint firstItem="r2d-va-VNg" firstAttribute="top" secondItem="x1q-J4-1TV" secondAttribute="bottom" id="U8X-M6-bTZ"/>
+                            <constraint firstAttribute="trailing" secondItem="b4M-G9-ZkY" secondAttribute="trailing" id="Wf4-1e-klG"/>
+                            <constraint firstItem="x1q-J4-1TV" firstAttribute="top" secondItem="b4M-G9-ZkY" secondAttribute="bottom" id="XHK-wj-0EM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="recipesTableView" destination="x1q-J4-1TV" id="yZr-SL-HYu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H27-wI-W2D" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
