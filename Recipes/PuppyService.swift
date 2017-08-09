@@ -17,13 +17,6 @@ class PuppyService: NSObject
 {
     let operationQueue = OperationQueue()
     
-    fileprivate func doGet(path: String, parameters: [String:Any], completion: @escaping (AnyObject?) -> Void)
-    {
-        Alamofire.request(path, method: .get, parameters: parameters).responseJSON { response in
-            completion(response.result.value as AnyObject?)
-        }
-    }
-    
     fileprivate func getPagedRecipes(query: String, page: Int, completion: @escaping ([Recipe]) -> Void) {
         
         var recipes = [Recipe]()

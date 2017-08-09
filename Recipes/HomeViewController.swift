@@ -21,7 +21,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
             self.recipes = recipes
             
             self.recipesTableView.reloadData()
-    
         }
     }
     
@@ -32,10 +31,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, UITableViewDele
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
-        //print (recipes[indexPath.row].title)
         cell.textLabel?.text = recipes[indexPath.row].title.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         
         return cell
     }
 }
-
